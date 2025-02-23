@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our Site</title>
+
+    <style>
+       /* Header Styling */
+        .header {
+            background-color: #ff69b4; /* Hot Pink */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+  
+
+        /* General Styles */
+        body {
+            background-color: #ffe0f0;
+            color: #d36b9a;
+            text-align: center;
+            padding: 50px;
+            margin: auto;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #ff69b4;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            background-color: #ffe0f0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .page {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            margin: auto;
+            box-shadow: 0px 0px 10px #ffb6c1;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .page.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Button Styling */
+        button {
+            background: #ff69b4;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ff1493;
+            transform: scale(1.1);
+        }
+
+        /* Columns & Boxes */
+        .columns {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .column {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            width: 250px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .column:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Definition & Profiles */
+        .definition, .profile {
+            display: none;
+            background: white;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 8px #ff69b4;
+        }
+
+        /* Image Rotations */
+        img {
+            max-width: 80px;
+            height: auto;
+            transition: transform 0.6s ease;
+            cursor: pointer;
+        }
+
+        .rotated {
+            transform: rotate(360deg);
+        }
+
+        /* Marquee Animation */
+        .marquee-container {
+            overflow: hidden;
+            background-color: darkgrey;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .marquee {
+            display: flex;
+            gap: 15px;
+            animation: scroll 15s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #ff69b4;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+        }
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.blinking-image {
+    animation: blink 1s linear infinite;
+}
+
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+    <div class="header">
+        INFORMATION & COMMUNICATION TECHNOLOGY
+    </div>
+
+  
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <h1>Welcome to our site</h1>
+        <button onclick="showPage('computer-page')">WANNA LEARN ABOUT COMPUTERS?</button>
+        <button onclick="showPage('about-page')">ABOUT US</button>
+
+        <div class="rotate-img">
+            <img src="com.JPG" alt="Monitor" onclick="rotateImage(this)"class="blinking-image">
+        </div>
+    </div>
+
+    <!-- Computer Parts Page -->
+    <div id="computer-page" class="page">
+        <h2>Learn About Computer Parts</h2>
+        <div class="columns">
+            <div class="column" onclick="showDefinition('cpu')">
+                <h3>CPU</h3><p>Click to learn</p>
+                <div id="cpu" class="definition"><p>The CPU (Central Processing Unit) is like the brain of your computer. It carries out the instructions from programs, handles calculations, and directs other parts of the computer to get things done.
+
+At its core, the CPU consists of a few key parts:
+
+ALU (Arithmetic Logic Unit): Does math and logical operations.
+Control Unit (CU): Tells the CPU what to do and when.
+Registers: Temporary storage for data the CPU is currently using.
+Cache: Super-fast memory that stores frequently used data to speed things up.
+The CPU works in cycles: it fetches an instruction, decodes it, executes it, and then writes the result back. This happens incredibly fast, often billions of times per second.
+
+CPU performance depends on factors like clock speed (how fast it runs) and how many cores it has (which allows it to handle multiple tasks at once). The more cores, the better it can multitask.</p>
+<a href="https://as1.ftcdn.net/jpg/01/94/07/58/1000_F_194075886_TWXtnNDwEiGlWZ8PRaklYTiW0hXKqjvA.webp" target="_blank">
+ 
+
+<img src="cpu.jpeg" style="width:200px;height:100px"></div></a>
+            </div>
+            <div class="column" onclick="showDefinition('ram')">
+
+                <h3>RAM</h3><p>Click to learn</p>
+                <div id="ram" class="definition"><p>RAM (Random Access Memory) is like your computer's short-term memory. It stores data that your computer is actively using, so the processor can access it quickly. When you open an app or file, it’s loaded into RAM because it’s faster to access than data on your hard drive or SSD.
+
+RAM helps your computer run smoothly, especially when multitasking. The more RAM you have, the more programs your computer can handle at once without slowing down. But remember, RAM is temporary—once you turn off the computer, everything in RAM is lost.
+
+Think of it like this: If you’re doing a project, you keep your tools and materials on your desk (RAM) so you can grab them easily. If your desk gets too small (not enough RAM), you’ll start putting things on the floor (your hard drive), which slows you down.</p>
+<a href="https://images.teamgroupinc.com/products/memory/u-dimm/ddr5/xtreem/pink/02.jpg" target="_blank">
+<img src="ram.jpeg" style="width:200px;height:100px"></div></a>
+            </div>
+            <div class="column" onclick="showDefinition('motherboard')">
+                <h3>Motherboard</h3><p>Click to learn</p>
+                <div id="motherboard" class="definition"><p>The motherboard is the main board in your computer that connects everything together and allows them to communicate. It holds key parts like the CPU (the brain), RAM (temporary memory), and provides slots for things like storage drives (HDD/SSD) and expansion cards (graphics or sound cards).
+
+It also handles power distribution, making sure every component gets the right amount of electricity. The motherboard has ports for connecting peripherals (USB, HDMI, etc.) and routes data between all the components.
+
+In short, it’s the central hub that makes sure your computer’s parts can work together and function properly.</p>
+<a href="https://www.alamy.com/stock-photo-chip-on-motherboard-mainboard-with-controllers-ports-and-wires-close-141522512.html" target="_blank">
+<img src="mb.jpeg" style="width:200px;height:100px"> </a>
+</div>
+            </div>
+            <div class="column" onclick="showDefinition('hdd')">
+
+                <h3>Hard Drive</h3>
+                <p>Click to learn</p>
+                <div id="hdd" class="definition">
+                    <p>A hard drive (HDD) is a storage device in your computer that holds your operating system, applications, and files. Inside, it has spinning disks (called platters) coated with magnetic material. A read/write head moves across the platters to store or access data by magnetizing spots on the surface.
+
+HDDs offer large storage capacities and are cheaper than newer storage options like solid-state drives (SSDs), but they’re slower because of the moving parts. HDDs are great for storing large amounts of data, but they're more prone to wear and damage due to their mechanical nature.
+
+While SSDs are faster and more durable, hard drives remain popular for bulk storage because of their lower cost per gigabyte.</p>
+                   <a href="https://render.fineartamerica.com/images/images-profile-flow/400/images-medium-large-5/2-open-hard-disc-drive-wladimir-bulgarscience-photo-library.jpg" target="_blank"> <img src="hd.jpeg" style="width:200px;height:100px"> </a>
+                </div>
+            </div>
+            <div class="column" onclick="showDefinition('cooling')">
+
+                <h3>Cooling</h3>
+                <p>Click to learn</p>
+                <div id="cooling" class="definition">
+                    <p>An ICT cooling fan is a fan used in Information and Communication Technology equipment to prevent overheating by maintaining optimal temperatures. Devices like servers, network switches, and other computing equipment generate heat from high processing demands. If this heat isn't managed, it can lead to system failures or reduced performance, which is why cooling fans are essential.
+
+These fans work by moving air through the device—pulling in cool air and pushing out hot air. The fans are often strategically placed near components like the CPU or power supply, where heat is most concentrated. Many fans also have temperature sensors and adjust their speed based on how hot the system is, increasing airflow when needed.
+
+In high-performance setups, like data centers, multiple cooling fans may be used to ensure proper airflow and keep temperatures under control. They come in different types, such as axial fans (which blow air in one direction) or blower fans (which create more focused airflow). Proper cooling helps maintain system stability, efficiency, and prolongs hardware life.</p>
+                   <a href="https://microless.com/cdn/products/3578b901b7d576a995cba83d2d1e5f62-md.jpg" target="_blank"> <img src="cool.jpeg" style="width:200px;height:100px">
+</a>
+                </div>
+            </div>
+        </div>
+        <button onclick="goHome()">Back to Home</button>
+    </div>
+
+    <!-- About Us Page -->
+    <div id="about-page" class="page">
+        <h2>About Us</h2>
+        <div class="columns">
+            <div class="column" onclick="showProfile('profile1')">Batino, Frendileigh</div>
+            <div class="column" onclick="showProfile('profile2')">Baker, Kzyldjian Marriel</div>
+            <div class="column" onclick="showProfile('profile3')">Manalo, Krystine</div>
+            <div class="column" onclick="showProfile('profile4')">Besmonte, Sky Namie</div>
+            <div class="column" onclick="showProfile('profile5')">Sause, Kimberly</div>
+        </div>
+        <div id="profile1" class="profile"><h3>Batino, Frendileigh</h3><p><br>•Apr 22, 2007<br>•Putingkahoy, Silang Cavite <br>•10 Halcon</p><img src="ley.jpeg"style="width:200px;height:100px
+"></div>
+        <div id="profile2" class="profile"><h3>Baker, Kzyldjian Marriel</h3><p><br>•August 31, 2009<br>•Purok1 Santo Domingo Santa Rosa, Laguna<br>•10 Halcon</p><img src="kzy.jpeg"style="width:200px;height:100px
+"></div>
+        <div id="profile3" class="profile"><h3>Manalo, Krystine</h3><p><br>•September 28,2009<br>•Purok 6 Carmen, Silang, Cavite<br>•10 Halcon</p><img src="kry.jpeg"style="width:200px;height:100px
+"></div>
+        <div id="profile4" class="profile"><h3>Besmonte, Sky Namie</h3><p><br>•July 13,2009<br>•Hoyo, Silang, Cavite<br>•10 Halcon</p><img src="sky.jpg"style="width:200px;height:100px
+"></div>
+        <div id="profile5" class="profile"><h3>Sause, Kimberly</h3><p><br>•April 17,2009<br>•Puting Kahoy, Silang Cavite<br>•10 Halcon</p><img src="kim.jpeg"style="width:200px;height:100px
+"></div>
+        <button onclick="goHome()">Back to Home</button>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll(".page").forEach(page => {
+                page.classList.remove("active");
+            });
+            document.getElementById(pageId).classList.add("active");
+            hideAll();
+        }
+
+        function goHome() {
+            showPage("home");
+        }
+
+        function showDefinition(defId) {
+            hideDefinitions();
+            document.getElementById(defId).style.display = "block";
+        }
+
+        function hideDefinitions() {
+            document.querySelectorAll(".definition").forEach(def => def.style.display = "none");
+        }
+
+        function showProfile(profileId) {
+            hideProfiles();
+            document.getElementById(profileId).style.display = "block";
+        }
+
+        function hideProfiles() {
+            document.querySelectorAll(".profile").forEach(profile => profile.style.display = "none");
+        }
+
+        function hideAll() {
+            hideDefinitions();
+            hideProfiles();
+        }
+
+        function rotateImage(img) {
+            img.classList.toggle("rotated");
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Thank you so much! 💖</p>
+    </footer>
+
+</body>
+</html>
+
+
